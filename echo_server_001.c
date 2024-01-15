@@ -40,7 +40,7 @@ int main(int argc,char* argv[])
     struct sockaddr_in client;
     socklen_t client_addrlength = sizeof(client);
     //accept函数是一个阻塞函数，只有等到有链接请求，返回并创建一个套接字与客户端通信
-    int sockfd = accept(listenfd,(struct sockaddr*)(&address),&client_addrlength);
+    int sockfd = accept(listenfd,(struct sockaddr*)(&client),&client_addrlength);
     char buf_size[1024] = {0};
     int recv_size = 0;
     //从套接字sockfd接收数据，并将数据存储在buf_size中
